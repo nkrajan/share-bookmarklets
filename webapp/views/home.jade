@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	h1= title
+	p a #{title}
+	#table
+		table
+			thead
+				tr
+					th Name
+					th User Name
+					th Password
+			tbody
+			- for( var i = 0; i < users.length; i++){
+			- var user = users[i];
+				tr
+					td=  user.name
+					td
+						b= user.username	
+					td= user.password
+			- }
+	script(src="http://code.jquery.com/jquery-1.8.0.min.js")
